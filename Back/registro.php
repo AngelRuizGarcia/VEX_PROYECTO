@@ -8,6 +8,11 @@
 </head>
 
 <body>
+    <?php
+    require_once("conexionClaves.php");
+    $conexion = new PDO($dsn, $usuario, $contraseña);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    ?>
     <h1>UPLOAD GAME</h1>
 
     <form action="registrarUsuario.php" method="post">
@@ -63,16 +68,34 @@
 
         <label for="genre">Genre</label><br>
         <select name="genre[]" id="genre" multiple>
-            <!-- Generar las opciones con la tabla de generos de la BD-->
-            <option value="ejemplo">Ejemplo</option>
+            <?php
+            $consultaGenero = "SELECT * FROM 'categorias';";
+
+            $sentenciaGenero = $conexion->prepare($consultaGenero); // Preparar la consulta)
+            $sentenciaGenero->execute();
+
+            while ($fila = $sentenciaGenero->fetch()) {
+                $categoria = $fila["nombre"];
+                echo "<option value='$categoria'>$categoria</option>";
+            }
+            ?>
         </select>
 
         <br>
 
         <label for="tags">Tags</label><br>
         <select name="tags[]" id="tags" multiple>
-            <!-- Generar las opciones con la tabla de tags de la BD-->
-            <option value="ejemplo">Ejemplo</option>
+            <?php
+            $consultaTags = "SELECT * FROM 'categorias';";
+
+            $sentenciaTags = $conexion->prepare($consultaTags); // Preparar la consulta)
+            $sentenciaTags ->execute();
+
+            while ($fila = $sentenciaTags->fetch()) {
+                $tags = $fila["nombre"];
+                echo "<option value='$tags'>$tags</option>";
+            }
+            ?>
         </select>
 
         <br>
