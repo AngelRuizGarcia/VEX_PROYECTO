@@ -10,6 +10,7 @@
 <body>
     <?php
     require_once("conexionClaves.php");
+
     $conexion = new PDO($dsn, $usuario, $contraseña);
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     ?>
@@ -69,9 +70,9 @@
         <label for="genre">Genre</label><br>
         <select name="genre[]" id="genre" multiple>
             <?php
-            $consultaGenero = "SELECT * FROM 'categorias';";
+            $sql = "SELECT * FROM `categorias`;";
 
-            $sentenciaGenero = $conexion->prepare($consultaGenero); // Preparar la consulta)
+            $sentenciaGenero = $conexion->prepare($sql); // Preparar la consulta)
             $sentenciaGenero->execute();
 
             while ($fila = $sentenciaGenero->fetch()) {
@@ -86,9 +87,9 @@
         <label for="tags">Tags</label><br>
         <select name="tags[]" id="tags" multiple>
             <?php
-            $consultaTags = "SELECT * FROM 'categorias';";
+            $sql = "SELECT * FROM `etiquetas`;";
 
-            $sentenciaTags = $conexion->prepare($consultaTags); // Preparar la consulta)
+            $sentenciaTags = $conexion->prepare($sql); // Preparar la consulta)
             $sentenciaTags ->execute();
 
             while ($fila = $sentenciaTags->fetch()) {
@@ -102,7 +103,7 @@
 
         <label for="coverImage">Cover image</label>
         <input type="file" name="coverImage" id="coverImage"><br>
-        <label for="coverImageResolution">Minimum: aXa, Recommended: aXa</label>
+        <label for="coverImageResolution">Minimum: axa, Recommended: axa</label>
 
         <br>
 
