@@ -15,7 +15,7 @@
     ?>
     <h1>UPLOAD GAME</h1>
 
-    <form action="registrarUsuario.php" method="post">
+    <form action="subirJuego.php" method="post">
 
         <label for="title">Title</label>
         <input type="text" name="title" id="title" placeholder="Introduce the game title..." required>
