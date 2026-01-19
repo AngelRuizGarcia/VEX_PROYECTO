@@ -1,22 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../recursos/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../recursos/bootstrap-icons/bootstrap-icons.css">
+    <script src="../recursos/bootstrap/js/bootstrap.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        .luckiest-guy-regular {
+            font-family: "Luckiest Guy" !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+        
+        *{
+            text-transform: uppercase;
+            font-family: "Luckiest Guy";
+            letter-spacing: 3px;
+            paint-order: stroke fill;
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke-width:5px;
+            -webkit-text-stroke-color: black;
+            font-size: 1.3rem;
+            
+        }
+    </style>
 </head>
+
 <body>
-    <header class="container-fluid bg-dark text-white py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-2 d-flex flex-column text-center justify-content-start">
-                    <img src="../recursos/img/VEX_logo.png" class="img-fluid bg-white" alt="...">
-                    <p class="h2">VEX</p>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../recursos/img/VEX_logo.png" alt="" class="img-fluid">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav gap-3 text-center">
+                        <li class="nav-item">
+                            <a class="nav-link active border border-5 border-black rounded-pill" aria-current="page"
+                                href="#">Browse Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link border border-5 border-black rounded-pill" aria-current="page"
+                                href="#">Upload Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link border border-5 border-black rounded-pill" aria-current="page"
+                                href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link border border-5 border-black rounded-pill" aria-current="page"
+                                href="#">Register</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 </body>
 </html>
