@@ -17,14 +17,14 @@
             font-weight: 400 !important;
             font-style: normal !important;
         }
-        
-        *{
+
+        * {
             text-transform: uppercase;
             font-family: "Luckiest Guy";
             letter-spacing: 3px;
             paint-order: stroke fill;
             -webkit-text-fill-color: white;
-            -webkit-text-stroke-width:5px;
+            -webkit-text-stroke-width: 5px;
             -webkit-text-stroke-color: black;
             font-size: 1.3rem;
             
@@ -33,39 +33,48 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="./recursos/img/VEX_logo.png" alt="" class="img-fluid">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav gap-3 text-center">
-                        <li class="nav-item">
-                            <a class="nav-link active border border-5 border-black rounded-pill" aria-current="page"
-                                href="#">Browse Games</a>
-                        </li>
-                        <li class="nav-item"> 
-                            <a class="nav-link border border-5 border-black rounded-pill" aria-current="page"
-                                href="#">Upload Game</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link border border-5 border-black rounded-pill" aria-current="page"
-                                href="#">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link border border-5 border-black rounded-pill" aria-current="page"
-                                href="#">Register</a>
-                        </li>
-                    </ul>
-                </div>
+    <header class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./recursos/img/VEX_logo.png" alt="" class="img-fluid">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav gap-3 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link active border border-5 border-black rounded-pill bg-white" aria-current="page"
+                            href="#">Browse Games</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border border-5 border-black rounded-pill bg-white" aria-current="page"
+                            href="#">Upload Game</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border border-5 border-black rounded-pill bg-white" aria-current="page"
+                            href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border border-5 border-black rounded-pill bg-white" aria-current="page"
+                            href="#">Register</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
     </header>
+
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="p-3 text-center">vex is the platform where indie developers can earn rewards from visits to their games.</div>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-12 bg-primary">asd</div>
+        </div>
+    </main>
 </body>
 </html>
