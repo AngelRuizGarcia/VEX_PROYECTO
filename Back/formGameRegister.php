@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<?php
+require_once("../recursos/php/head.php");
+$header = new Head("VEX - Upload Game", "..");
+echo $header->toHTML();
+?>
 </head>
 
 <body>
@@ -70,13 +71,13 @@
         <label for="genre">Genre</label><br>
         <select name="genre[]" id="genre" multiple>
             <?php
-            $sql = "SELECT * FROM `categorias`;";
+            $sql = "SELECT * FROM `genre`;";
 
             $sentenciaGenero = $conexion->prepare($sql); // Preparar la consulta)
             $sentenciaGenero->execute();
 
             while ($fila = $sentenciaGenero->fetch()) {
-                $categoria = $fila["nombre"];
+                $categoria = $fila["name"];
                 echo "<option value='$categoria'>$categoria</option>";
             }
             ?>
@@ -87,13 +88,13 @@
         <label for="tags">Tags</label><br>
         <select name="tags[]" id="tags" multiple>
             <?php
-            $sql = "SELECT * FROM `etiquetas`;";
+            $sql = "SELECT * FROM `tag`;";
 
             $sentenciaTags = $conexion->prepare($sql); // Preparar la consulta)
             $sentenciaTags ->execute();
 
             while ($fila = $sentenciaTags->fetch()) {
-                $tags = $fila["nombre"];
+                $tags = $fila["name"];
                 echo "<option value='$tags'>$tags</option>";
             }
             ?>

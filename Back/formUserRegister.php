@@ -2,40 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REGISTER</title>
-    <link rel="stylesheet" href="../recursos/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../recursos/bootstrap/icons/bootstrap-icons.css">
-    <script src="../recursos/bootstrap/js/bootstrap.js"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <style>
-        .luckiest-guy-regular {
-            font-family: "Luckiest Guy" !important;
-            font-weight: 400 !important;
-            font-style: normal !important;
-        }
-
-        * {
-            text-transform: uppercase;
-            font-family: "Luckiest Guy";
-            letter-spacing: 3px;
-            paint-order: stroke fill;
-            -webkit-text-fill-color: white;
-            -webkit-text-stroke-width: 5px;
-            -webkit-text-stroke-color: black;
-            font-size: 1.3rem;
-
-        }
-    </style>
+<?php
+require_once("../recursos/php/head.php");
+$header = new Head("VEX - User Register", "..");
+echo $header->toHTML();
+?>
 </head>
 
 <body>
     <div class="container">
-        <form class="form-horizontal row gap-3 text-end border border-dark border-5 rounded-5 p-2 m-1" action="registerDatos.php" method="POST">
+        <form class="form-horizontal row gap-3 text-end border border-dark border-5 rounded-5 p-2" action="./userRegisterData.php" method="POST" enctype="multipart/form-data">
             <h2 class="text-center">Register form</h2>
 
             <div class="form-group col-12 row">
@@ -72,6 +48,25 @@
                 <div class="col-8">
                     <input type="text" class="form-control" name="secondSurname" required>
                 </div>
+            </div>
+            
+            <div class="form-group col-12 row">
+                <label class="control-label col-4" for="password">Pay Method:</label>
+                <div class="col-8">
+                    <select name="payMethod" class="form-select" required>
+                        <option selected value="paypal">Paypal</option>
+                        <option value="credit_card">Credit Card</option>
+                        <option value="bank_trasnfer">Debit Card</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group col-12 row">
+                <label class="formFile col-4" for="password">Profile picture:</label>
+                <div class="col-8">
+                    <input type="file" class="form-control" name="profilePicture" accept="image/*">
+                </div>
+
             </div>
 
             <div class="form-group col-12 row">

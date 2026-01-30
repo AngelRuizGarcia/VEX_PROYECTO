@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+<?php
+require_once("../recursos/php/head.php");
+$header = new Head("VEX - User Login", "..");
+echo $header->toHTML();
+?>
 </head>
+
 <body>
     <form action="loginDatos.php" method="POST">
         <label for="username">Username:</label>
