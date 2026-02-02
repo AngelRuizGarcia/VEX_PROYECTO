@@ -21,7 +21,7 @@ echo $header->toHTML();
                     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                     $stmt = $conexion->prepare("DELETE FROM users WHERE id_user = :id_user");
-                    $stmt->bindParam(':id_user', $_POST['id_user'], PDO::PARAM_INT);
+                    $stmt->bindParam(':id_user', $_POST['id_user'], PDO::PARAM_STR);
                     $stmt->execute();
 
                     echo '<div class="alert alert-success" role="alert">Usuario eliminado con éxito.</div>';
