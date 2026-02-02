@@ -14,7 +14,6 @@ echo $header->toHTML();
         <?php
             require_once("./conexionClaves.php");
             
-            // Mostrar todos los usuarios
             try {
                 $conexion = new PDO($dsn, $usuario, $contraseña);
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
