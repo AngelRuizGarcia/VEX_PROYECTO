@@ -22,7 +22,7 @@
                 <option value="name">Name</option>
             </select>
             <label for="cambio">Nuevo dato:</label>
-            <input type="text" value="cambio" id="cambio">
+            <input type="text"  id="cambio">
             <input type="submit">
             <?php
             require_once("./conexionClaves.php");

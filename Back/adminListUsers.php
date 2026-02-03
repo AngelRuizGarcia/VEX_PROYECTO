@@ -29,7 +29,6 @@ echo $header->toHTML();
                     echo '<th>ID</th>';
                     echo '<th>Nombre</th>';
                     echo '<th>Email</th>';
-                    echo '<th>Acción</th>';
                     echo '</tr>';
                     echo '</thead>';
                     echo '<tbody>';
@@ -39,6 +38,16 @@ echo $header->toHTML();
                         echo '<td>' . htmlspecialchars($usuario['id_user']) . '</td>';
                         echo '<td>' . htmlspecialchars($usuario['name']) . '</td>';
                         echo '<td>' . htmlspecialchars($usuario['email']) . '</td>';
+                        echo '<td>';
+                        echo '<form method="POST" action="./adminEditUsers.php" style="display:inline;">';
+                        echo '<input type="hidden" name="editar" value="' . htmlspecialchars($usuario['id_user']) . '">';
+                        echo '<button type="submit" class="btn btn-primary btn-sm">Editar</button>';
+                        echo '</form>';
+                        echo '<form method="POST" action="./adminDeleteUsers.php" style="display:inline;" onsubmit="return confirm(\'¿Estás seguro de que deseas eliminar este usuario?\');">';
+                        echo '<input type="hidden" name="borrar" value="' . htmlspecialchars($usuario['id_user']) . '">';
+                        echo '<button type="submit" class="btn btn-danger btn-sm">Borrar</button>';
+                        echo '</form>';                        
+                        echo '</td>';
                         echo '</tr>';
                     }
 
