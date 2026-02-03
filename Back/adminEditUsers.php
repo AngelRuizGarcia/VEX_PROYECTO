@@ -33,7 +33,7 @@
                     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                     $stmt = $conexion->prepare("UPDATE  users set :id_user = :cambio");
-                    $stmt->bindParam(':id_user', $_POST['campo'], PDO::PARAM_STR);
+                    $stmt->bindParam(':id_user', $_POST['campo'], PDO::PARAM_INT);
                     $stmt->bindParam(':cambio', $_POST['cambio'], PDO::PARAM_STR);
                     $stmt->execute();
 
