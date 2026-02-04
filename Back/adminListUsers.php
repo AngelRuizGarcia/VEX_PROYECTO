@@ -9,7 +9,7 @@ echo $header->toHTML();
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Administrador - Listar Usuarios</h2>
+        <h2 class="text-center">Administrador - Listar Usuarios</h2>
         
         <?php
             require_once("./conexionClaves.php");
@@ -27,8 +27,8 @@ echo $header->toHTML();
                     echo '<thead>';
                     echo '<tr>';
                     echo '<th>ID</th>';
-                    echo '<th>Nombre</th>';
-                    echo '<th>Email</th>';
+                    echo '<th class="text-center">Nombre</th>';
+                    echo '<th class="text-center">Email</th>';
                     echo '</tr>';
                     echo '</thead>';
                     echo '<tbody>';
@@ -36,12 +36,12 @@ echo $header->toHTML();
                     foreach ($usuarios as $usuario) {
                         echo '<tr>';
                         echo '<td>' . htmlspecialchars($usuario['id_user']) . '</td>';
-                        echo '<td>' . htmlspecialchars($usuario['name']) . '</td>';
-                        echo '<td>' . htmlspecialchars($usuario['email']) . '</td>';
+                        echo '<td class="text-center">' . htmlspecialchars($usuario['name']) . '</td>';
+                        echo '<td class="text-center">' . htmlspecialchars($usuario['email']) . '</td>';
                         echo '<td>';
                         echo '<form method="POST" action="./adminEditUsers.php" style="display:inline;">';
                         echo '<input type="hidden" name="editar" value="' . htmlspecialchars($usuario['id_user']) . '">';
-                        echo '<button type="submit" class="btn btn-primary btn-sm">Editar</button>';
+                        echo '<button type="submit" class="btn btn-primary btn-sm me-3 ms-3">Editar</button>';
                         echo '</form>';
                         echo '<form method="POST" action="./adminDeleteUsers.php" style="display:inline;" onsubmit="return confirm(\'¿Estás seguro de que deseas eliminar este usuario?\');">';
                         echo '<input type="hidden" name="borrar" value="' . htmlspecialchars($usuario['id_user']) . '">';

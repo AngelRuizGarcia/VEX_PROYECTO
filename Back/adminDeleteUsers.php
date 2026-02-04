@@ -9,7 +9,7 @@ echo $header->toHTML();
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Administrador - Eliminar Usuarios</h2>
+        <h2 class="text-center">Administrador - Eliminar Usuarios</h2>
         
         <?php
             require_once("./conexionClaves.php");
