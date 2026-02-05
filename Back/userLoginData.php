@@ -2,6 +2,11 @@
 require_once("./conexionClaves.php");
 if($_SERVER["REQUEST_METHOD"] === "POST"){
 
+    if (isset($_POST['volver'])) {
+        header("Location: ./recovery.php");
+        exit();
+    }
+
     if(!isset($_POST['username'], $_POST['password'])){
         die("Faltan datos del formulario");
     }else{
