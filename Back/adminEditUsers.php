@@ -11,43 +11,34 @@
 </head>
 
 <body>
+    <div class="container mt-5">
+        <h2 class="text-center">Administrador - Editar Usuarios</h2>
 
-    <?php
-      try {
+        <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
+            <label for="campo" class="mt-5">Elige el campo a cambiar:</label>
+            <select name="campo" id="campo">
+                <?php
+                try {
                     $conexion = new PDO($dsn, $usuario, $contraseña);
                     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $camposBBDD = [];
                     $stmt = $conexion->prepare("DESCRIBE users");
                     $stmt->execute();
                     $columnas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    
+
                     foreach ($columnas as $row) {
-                        array_push($camposBBDD, $row["Field"]);
+                        echo '<option value=' . $row["Field"] . '>' . $row["Field"] . '</option>';
                     }
-                  
+
                     $conexion = null;
                 } catch (PDOException $e) {
                     die("Error en la conexión: " . $e->getMessage());
                 }
-
-?>
-    <div class="container mt-5">
-        <h2 class="text-center">Administrador - Editar Usuarios</h2>
-
-
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <label for="campo" class="mt-5">Elige el campo a cambiar:</label>
-            <select name="campo" id="campo">
-                <?php 
-                    for ($i=0; $i < count($camposBBDD); $i++) { ?>
-                        <option value="<?php echo $camposBBDD[$i]; ?>"><?php echo $camposBBDD[$i]; ?></option>
-                    <?php } ?>
-                
-                
+                ?>
             </select>
             <label for="cambio">Nuevo dato:</label>
             <input type="text" id="cambio" name="cambio">
-            <input type="hidden" name="editar" value="<?php echo $_POST['editar'] ?? ''; ?>">
+            <input type="hidden" name="editar" value="<?= $_POST['editar'] ?? ''; ?>">
             <input type="submit">
             <?php
 
@@ -69,12 +60,12 @@
                     die("Error en la conexión: " . $e->getMessage());
                 }
             }
-            
+
             ?>
             <br>
-        
+
             <button type="button" onclick="window.location.href='./adminListUsers.php';">Volver</button>
-            
+
 
 </body>
 
