@@ -26,13 +26,13 @@ try {
             $mail->isSMTP();                                           
             $mail->Host       = 'smtp-mail.outlook.com';                    
             $mail->SMTPAuth   = true;                                  
-            $mail->Username   = 'user@example.com';                     
-            $mail->Password   = 'secret';                                        
+            $mail->Username   = 'alerovmar@alu.edu.gva.es';                     
+            $mail->Password   = '';                                        
             $mail->Port       = 587;                                   
 
             //Recipients
-            $mail->setFrom('from@example.com', 'Mailer');
-            $mail->addAddress('joe@example.net', 'Joe User');                  
+            $mail->setFrom('alerovmar@alu.edu.gva.es', 'VEXI');
+            $mail->addAddress($email, 'Usuario');                  
 
             //Attachments      
             $mail->addAttachment('../recursos/img/VEX_logo.png', 'VEXI.png');    

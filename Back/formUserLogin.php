@@ -17,7 +17,7 @@
             <div class="form-group col-12 row">
                 <label class="control-label col-4" for="username">Username:</label>
                 <div class="col-8">
-                    <input type="text" class="form-control" name="username" required>
+                    <input type="text" class="form-control" name="username">
                 </div>
             </div>
 
