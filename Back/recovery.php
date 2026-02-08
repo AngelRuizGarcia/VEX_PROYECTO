@@ -11,7 +11,7 @@
 
 <body>
     <div class="container align-items-center d-flex justify-content-center" style="height: 100vh;">
-        <form class="form-horizontal row gap-3 text-end border border-dark border-5 rounded-5 p-2" action="recoveryData.php" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal row gap-3 text-end border border-dark border-5 rounded-5 p-2" action="recoveryData.php" method="POST">
             <h2 class="text-center">recovery form</h2>
 
             <div class="form-group col-12 row">
@@ -22,7 +22,7 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                <button class="btn btn-dark mt-2" type="submit" name="email">SEND EMAIL</button>
+                <button class="btn btn-dark mt-2" type="submit" name="enviar">SEND EMAIL</button>
             </div>
         </form>
     </div>
