@@ -9,56 +9,42 @@
     <link rel="stylesheet" href="./recursos/bootstrap/icons/bootstrap-icons.css">
     <script src="./recursos/bootstrap/js/bootstrap.js"></script>
     <link rel="stylesheet" href="./recursos/css/fontStyle.css">
-    <style>
-        .imgperf {
-            width: 20%;
-            height: 20%;
-        }
-        .deco0 {
-            list-style: none;
-        }
-    </style>
 </head>
 
 <body>
-    <header class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="./recursos/img/VEX_logo.png" alt="" class="img-fluid mb-3">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav gap-4 text-center">
-                        <li class="nav-item">
-                            <a class="nav-link active border border-5 border-black rounded-pill bg-white "
-                                aria-current="page" href="#">Browse Games</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link border border-5 border-black rounded-pill bg-white" aria-current="page"
-                                href="#">Upload Game</a>
-                        </li>
-                        </ul>
-                        <div class="d-flex ms-auto">
-                        <ul class="text-center ms-auto deco0">
-                        <li class="nav-item">
-                            <a class="nav-link border border-5 border-black rounded-pill bg-white" aria-current="page"
-                                href="#">Login</a>
-                        </li>
-                        <li class="nav-item pt-1">
-                            <a class="nav-link border border-5 border-black rounded-pill bg-white" aria-current="page"
-                                href="#">Register</a>
-                        </li>
-                    </ul>
-                    </div>
+    <header class="navbar">
+        <nav class="container-fluid text-center">
+            <ul class="d-flex gap-3 navbar-nav flex-row align-items-center">
+                <li class="nav-item">
                     <a class="navbar-brand" href="#">
-                    <img src="./recursos/img/sinperfil.webp" alt="" class="img-fluid imgperf rounded-circle ms-2 mb-2">
-                </a>
-                </div>
-        </div>
+                        <img src="./recursos/img/VEX_logo.png" alt="" class="img-fluid mb-3">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Browse Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Upload Game</a>
+                </li>
+            </ul>
+            <!-- ELIMINAR LOS BOTONES SI ESTA INICIADA LA SESION Y PONER UN BOTON PARA CERRARLA-->
+            <ul class="d-flex gap-3 text-light align-items-center navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Register</a>
+                </li>
+                <li class="nav-item" hidden>
+                    <a class="nav-link border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Log Out</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="#">
+                        <img src="./recursos/img/sinperfil.webp" alt="" class="img-fluid rounded-circle border border-black border-3" style="width: 8rem; height: 8rem;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main class="container-fluid">
