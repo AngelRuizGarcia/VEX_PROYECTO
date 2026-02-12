@@ -6,6 +6,31 @@
     require_once("../recursos/php/head.php");
     $header = new Head("VEX - recover account", "..");
     echo $header->toHTML();
+    $token = $_GET['token'] ?? '';
+    if (!$token) {
+        die("Token no válido.");
+    }
+
+    try {
+        $conexion = new PDO($dsn, $usuario, $contraseña);
+        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt = $conexion->prepare("
+                             SELECT * FROM password_resets
+                             WHERE token = ?");
+        $stmt->execute([$token]);
+        $reset = $stmt->fetch(PDO::FETCH_ASSOC);
+        $conexion = null;
+    } catch (PDOException $e) {
+        die("Token no válido " . $e->getMessage());
+    }
+
+    if (!$reset) {
+        die("Token inválido.");
+    }
+
+    if (strtotime($reset['expires_at']) < time()) {
+        die("El enlace ha expirado.");
+    }
     ?>
 </head>
 
@@ -21,7 +46,7 @@
                 </div>
             </div>
 
-                <div class="form-group col-12 row">
+            <div class="form-group col-12 row">
                 <label class="control-label col-4" for="confirm_password">Confirm Password:</label>
                 <div class="col-8">
                     <input type="password" class="form-control" name="confirm_password" required>
