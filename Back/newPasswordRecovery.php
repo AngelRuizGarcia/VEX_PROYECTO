@@ -4,6 +4,7 @@
 <head>
     <?php
     require_once("../recursos/php/head.php");
+    require_once("./conexionClaves.php");
     $header = new Head("VEX - recover account", "..");
     echo $header->toHTML();
     $token = $_GET['token'] ?? '';
