@@ -24,7 +24,7 @@
         echo '
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
             <div class="alert alert-danger text-center" role="alert">
-        Token no válido.
+        invalid token.
         </div>
     </div>
 ';
@@ -40,7 +40,7 @@
         echo '
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
             <div class="alert alert-danger text-center" role="alert">
-        Token inválido.
+        invalid token.
         </div>
     </div>
     ';
@@ -48,7 +48,13 @@
     }
 
     if (strtotime($reset['expires_at']) < time()) {
-        echo '<div class="alert alert-danger" role="alert">El enlace ha expirado.</div>';
+        echo '
+        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div class="alert alert-danger text-center" role="alert">
+        The link has expired.
+        </div>
+        </div>
+        ';
         exit;
     }
     ?>
@@ -85,7 +91,7 @@
         $confirm  = $_POST['confirm_password'] ?? '';
 
         if ($password !== $confirm) {
-            echo '<div class="alert alert-danger text-center" role="alert">Las contraseñas no coinciden.</div>';
+            echo '<div class="alert alert-danger text-center" role="alert">The passwords do not match.</div>';
             exit;
         }
 
@@ -97,12 +103,12 @@
         $reset = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$reset) {
-            echo '<div class="alert alert-danger text-center" role="alert">Token inválido.</div>';
+            echo '<div class="alert alert-danger text-center" role="alert">invalid token.</div>';
             exit;
         }
 
         if (strtotime($reset['expires_at']) < time()) {
-            echo '<div class="alert alert-danger text-center" role="alert">El enlace ha expirado.</div>';
+            echo '<div class="alert alert-danger text-center" role="alert">The link has expired.</div>';
             exit;
         }
 
@@ -123,7 +129,7 @@
         $stmt->execute([$reset['id']]);
 
         $conexion = null;
-        echo '<div class="alert alert-success m-0 text-center" role="alert">Contraseña cambiada correctamente.</div>';
+        echo '<div class="alert alert-success m-0 text-center" role="alert">Password successfully changed.</div>';
         exit;
     }
     ?>
