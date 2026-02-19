@@ -10,7 +10,7 @@ $conexion = new PDO($dsn, $usuario, $contraseña);
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 
-<body>
+<body class="nunitoFontFamily">
 
     <?php
     include_once("../recursos/php/header.php");
@@ -20,19 +20,42 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     <main class="container-fluid mb-5">
         <div class="row">
-            <section class="col-12 col-sm-4 col-md-3 col-xl-3 bg-primary">
+            <section class="col-12 col-sm-4 col-md-3 col-xl-2 bg-primary">
                 <article class="d-flex justify-content-center mt-4">
-                    <label for="num_pages" class="">Show:</label>
+                    <label for="num_pages" class="text-white">Show:</label>
                     <select name="num_pages" id="num_pages" class="text-center rounded-pill w-25">
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="30">30</option>
                     </select>
-                    <label for="num_pages" class="ms-2">games</label>
+                    <label for="num_pages" class="ms-2 text-white">games</label>
                 </article>
             </section>
 
-            <section class="col-12 col-sm-8 col-md-9 col-xl-9">
+
+
+            <script>
+                document.getElementById('num_pages').addEventListener('change', getData);
+
+                function getData() {
+                    let prueba = document.getElementById('prueba');
+                    let num_pages = document.getElementById('num_pages').value;
+                    let url = 'gamesPageLoad.php';
+
+                    let formData = new FormData();
+                    formData.append('num_pages', num_pages)
+
+                    fetch(url, {
+                        method: "POST",
+                        body: formData
+                    }).then(response => response.json()).then(data => {
+                        prueba.innerHTML = data
+                    }).catch(err => console.log(err));
+
+                }
+            </script>
+
+            <section class="col-12 col-sm-8 col-md-9 col-xl-10">
                 <?php
                 try {
                     $stmt = $conexion->prepare("SELECT * FROM game");
@@ -53,7 +76,7 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         echo "<img src=\"../recursos/{$img[0]->image_path}\" class=\"card-img-top rounded-top-4 p-1\" alt=\"IMG\">";
                         echo "<div class=\"card-body\">";
                         echo "<h5 class=\"card-title\">{$title}</h5>";
-                        echo "<p class=\"card-text text-muted\">{$desc}</p>";
+                        echo "<p class=\"card-text\">{$desc}</p>";
                         echo "</div>";
                         echo "<div class=\"card-footer bg-transparent border-0\">";
                         echo "<small class=\"text-muted\">{$game['price']}</small>";
@@ -76,10 +99,6 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $footer = new Footer("..");
     echo $footer->toHTML();
     ?>
-
-    <script>
-
-    </script>
 </body>
 
 </html>
