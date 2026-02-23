@@ -31,7 +31,11 @@
             <div class="form-group col-12 row">
                 <label class="control-label col-4" for="message">Message:</label>
                 <div class="col-8">
-                    <input type="text" id="message" class="form-control" name="message" placeholder="write your message here">
+                    <textarea id="message" 
+                        class="form-control" 
+                        name="message" 
+                        placeholder="write your message here"
+                        rows="3"></textarea>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
