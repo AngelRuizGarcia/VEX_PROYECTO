@@ -32,29 +32,6 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 </article>
             </section>
 
-
-
-            <script>
-                document.getElementById('num_pages').addEventListener('change', getData);
-
-                function getData() {
-                    let prueba = document.getElementById('prueba');
-                    let num_pages = document.getElementById('num_pages').value;
-                    let url = 'gamesPageLoad.php';
-
-                    let formData = new FormData();
-                    formData.append('num_pages', num_pages)
-
-                    fetch(url, {
-                        method: "POST",
-                        body: formData
-                    }).then(response => response.json()).then(data => {
-                        prueba.innerHTML = data
-                    }).catch(err => console.log(err));
-
-                }
-            </script>
-
             <section class="col-12 col-sm-8 col-md-9 col-xl-10">
                 <?php
                 try {

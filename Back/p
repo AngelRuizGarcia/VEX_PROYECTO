@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tabla-container"></div>
+    <div id="pagination-container"></div>
+
+    <script>
+        function loadPage(page){
+            fetch(`getGames.php?page=${page}`).then(response => {
+                if(!response.ok) throw new Error('Error en la red')
+                return response.json();
+            }).then(data => {
+                reloadTable(data.data);
+                reloadPagination(data.actual_page, data.total_pages);
+            }).catch(error => {
+                console.error('Error: ', error);
+                document.getElementById('tabla-container').innerHTML = '<p>Error al cargar los datos</p>'
+            });
+        }
+
+        function reloadTable(game) {
+            let html = '<table><thead><tr><th>ID</th><th>Title</th></tr></thead><tbody>'
+            if(game.length === 0){
+                html += '<tr><td colspan="3">No hay usuarios</td></tr>';
+            } else {
+                game.forEach(g => {
+                    html += '<tr><td>' + g.id_game + '</td><td>' + g.title + '</td></tr>';
+                });
+            }
+
+            html += '</tbody></table>';
+            document.getElementById('tabla-container').innerHTML = html;
+        }
+
+        function reloadPagination(actual_page, total_pages){
+            let html = '';
+
+            html += `<button onClick="loadPage(${actual_page - 1})" ${actual_page === 1 ? 'disabled' : ''}>Anterior</button>`;
+
+            for(let i = 1; i <= total_pages; i++){
+                html += `<button onClick="loadPage(${i})" class"${i === actual_page ? 'active' : ''}">${i}</button>`;
+            }
+
+            html += `<button onClick="loadPage(${actual_page + 1})" ${actual_page === total_pages ? 'disabled' : ''}>Siguiente</button>`;
+
+            document.getElementById('pagination-container').innerHTML = html;
+        }
+
+        window.onload = function() {
+            loadPage(1);
+        };
+    </script>
+</body>
+</html>
