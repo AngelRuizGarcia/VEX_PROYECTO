@@ -10,7 +10,7 @@ $conexion = new PDO($dsn, $usuario, $contraseña);
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 
-<body>
+<body class="nunitoFontFamily">
 
     <?php
     include_once("../recursos/php/header.php");
@@ -20,15 +20,25 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     <main class="container-fluid mb-5">
         <div class="row">
+<<<<<<< HEAD
             <section class="col-12 col-sm-4 col-md-3 col-xl-3 bg-primary">
                 <article class="d-flex justify-content-center mt-4">
                     <label for="num_pages" class="">Show:</label>
+=======
+            <section class="col-12 col-sm-4 col-md-3 col-xl-2 bg-primary">
+                <article class="d-flex justify-content-center mt-4">
+                    <label for="num_pages" class="text-white">Show:</label>
+>>>>>>> 6d1326b3cee493823cacc4a55652545e37bcf55a
                     <select name="num_pages" id="num_pages" class="text-center rounded-pill w-25">
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="30">30</option>
                     </select>
+<<<<<<< HEAD
                     <label for="num_pages" class="ms-2">games</label>
+=======
+                    <label for="num_pages" class="ms-2 text-white">games</label>
+>>>>>>> 6d1326b3cee493823cacc4a55652545e37bcf55a
                 </article>
             </section>
 
@@ -53,7 +63,7 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         echo "<img src=\"../recursos/{$img[0]->image_path}\" class=\"card-img-top rounded-top-4 p-1\" alt=\"IMG\">";
                         echo "<div class=\"card-body\">";
                         echo "<h5 class=\"card-title\">{$title}</h5>";
-                        echo "<p class=\"card-text text-muted\">{$desc}</p>";
+                        echo "<p class=\"card-text\">{$desc}</p>";
                         echo "</div>";
                         echo "<div class=\"card-footer bg-transparent border-0\">";
                         echo "<small class=\"text-muted\">{$game['price']}</small>";

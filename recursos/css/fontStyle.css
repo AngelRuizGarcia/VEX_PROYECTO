@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 .luckiest-guy-regular {
     font-family: "Luckiest Guy" !important;
@@ -6,13 +7,20 @@
     font-style: normal !important;
 }
 
-* {
+.luckiestGuyFontFamily {
     text-transform: uppercase;
     font-family: "Luckiest Guy";
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     paint-order: stroke fill;
     -webkit-text-fill-color: white;
     -webkit-text-stroke-width: 5px;
     -webkit-text-stroke-color: black;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+}
+
+.nunitoFontFamily{
+    font-family: "Nunito";
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
 }

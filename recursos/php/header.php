@@ -12,7 +12,7 @@ class Header
     public function toHTML()
     {
         return "
-            <header class=\"navbar\">
+            <header class=\"navbar luckiestGuyFontFamily\">
                 <nav class=\"container-fluid text-center\">
                     <ul class=\"d-flex gap-3 navbar-nav flex-row align-items-center\">
                         <li class=\"nav-item\">
