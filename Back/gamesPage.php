@@ -20,25 +20,15 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     <main class="container-fluid mb-5">
         <div class="row">
-<<<<<<< HEAD
-            <section class="col-12 col-sm-4 col-md-3 col-xl-3 bg-primary">
-                <article class="d-flex justify-content-center mt-4">
-                    <label for="num_pages" class="">Show:</label>
-=======
             <section class="col-12 col-sm-4 col-md-3 col-xl-2 bg-primary">
                 <article class="d-flex justify-content-center mt-4">
                     <label for="num_pages" class="text-white">Show:</label>
->>>>>>> 6d1326b3cee493823cacc4a55652545e37bcf55a
                     <select name="num_pages" id="num_pages" class="text-center rounded-pill w-25">
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="30">30</option>
                     </select>
-<<<<<<< HEAD
-                    <label for="num_pages" class="ms-2">games</label>
-=======
                     <label for="num_pages" class="ms-2 text-white">games</label>
->>>>>>> 6d1326b3cee493823cacc4a55652545e37bcf55a
                 </article>
             </section>
 
