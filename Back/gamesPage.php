@@ -20,16 +20,26 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     <main class="container-fluid mb-5">
         <div class="row">
-            <section class="col-12 col-sm-4 col-md-3 col-xl-2 bg-primary">DATOS</section>
+            <section class="col-12 col-sm-4 col-md-3 col-xl-3 bg-primary">
+                <article class="d-flex justify-content-center mt-4">
+                    <label for="num_pages" class="">Show:</label>
+                    <select name="num_pages" id="num_pages" class="text-center rounded-pill w-25">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                    <label for="num_pages" class="ms-2">games</label>
+                </article>
+            </section>
 
-            <section class="col-12 col-sm-8 col-md-9 col-xl-10">
+            <section class="col-12 col-sm-8 col-md-9 col-xl-9">
                 <?php
                 try {
                     $stmt = $conexion->prepare("SELECT * FROM game");
                     $stmt->execute();
                     $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                    echo '<article class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">';
+                    echo '<article class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="content">';
                     foreach ($games as $game) {
                         $stmtIMG = $conexion->prepare("SELECT id_image, image_path from game_images WHERE :id_game = game_images.id_game LIMIT 1");
                         $stmtIMG->bindParam(":id_game", $game['id_game']);
@@ -66,6 +76,10 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $footer = new Footer("..");
     echo $footer->toHTML();
     ?>
+
+    <script>
+
+    </script>
 </body>
 
 </html>
