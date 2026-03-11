@@ -3,7 +3,7 @@ require_once("./conexionClaves.php");
 $conexion = new PDO($dsn, $usuario, $contraseña);
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$games_per_page = 10;
+$games_per_page = isset($_GET['num_pages']) ? (int)$_GET['num_pages'] : 10;
 
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -15,7 +15,7 @@ $stmt = $conexion->query("SELECT COUNT(*) FROM game");
 $total_games = $stmt->fetchColumn();
 $total_pages = ceil($total_games / $games_per_page);
 
-$stmt = $conexion->prepare("SELECT id_game, id_user, title, description, price FROM game ORDER BY id_game LIMIT :limit OFFSET :offset");
+$stmt = $conexion->prepare("SELECT g.id_game, g.id_user, g.title, g.description, g.price, gi.image_path FROM game g LEFT JOIN game_images gi ON g.id_game = gi.id_game AND gi.id_image = (SELECT MIN(id_image) FROM game_images WHERE id_game = g.id_game) ORDER BY g.id_game LIMIT :limit OFFSET :offset");
 $stmt->bindParam(':limit', $games_per_page, PDO::PARAM_INT);
 $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
