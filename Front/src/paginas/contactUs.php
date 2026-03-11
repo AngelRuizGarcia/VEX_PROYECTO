@@ -11,7 +11,7 @@
 
 <body>
     <div class="container align-items-center d-flex justify-content-center" style="height: 100vh;">
-        <form class="form-horizontal row gap-3 text-end border border-dark border-5 rounded-5 p-2" action="./userLoginData.php" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal row gap-3 text-end border border-dark border-5 rounded-5 p-2" action="./contactUsemailLogic.php" method="POST">
             <h2 class="text-center">Contact Us</h2>
 
             <div class="form-group col-12 row">

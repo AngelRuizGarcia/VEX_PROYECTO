@@ -13,7 +13,6 @@ body {
     padding: 50px 20px;
 }
 
-
 .container {
     max-width: 900px;
     width: 100%;
@@ -30,7 +29,6 @@ body {
     backdrop-filter: blur(6px);
 }
 
-
 header {
     text-align: center;
     margin-bottom: 40px;
@@ -39,11 +37,9 @@ header {
 h1 {
     font-size: 38px;
     font-weight: bold;
-
     background: linear-gradient(90deg,#9d51e0,#6b21f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     letter-spacing: 1px;
 }
 
@@ -52,8 +48,6 @@ h1 {
     font-size: 14px;
     color: #c4b5fd;
 }
-
-
 section {
     margin-bottom: 28px;
     padding: 18px;
@@ -64,7 +58,6 @@ section {
 
     transition: all 0.25s ease;
 }
-
 
 section:hover {
     border: 1px solid #9d51e0;
@@ -104,7 +97,6 @@ footer {
 
 
 @media (max-width: 768px) {
-
     .container {
         padding: 25px;
     }
@@ -116,5 +108,4 @@ footer {
     h2 {
         font-size: 18px;
     }
-
 }
