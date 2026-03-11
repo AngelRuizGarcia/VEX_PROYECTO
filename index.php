@@ -83,24 +83,11 @@
             </div>
         </div>
     </main>
-
-    <footer class="container-fluid">
-        <div class="row text-center align-items-center">
-            <div class="col-12 fs-3">2025&copy; vex. INDIE DEVELOPMENT PLATFORM</div>
-            <div class="col-12 pb-3">
-                <a class="icon-link px-3" href="#"><i class="bi bi-twitter-x"></i></a>
-                <a class="icon-link px-3" href="#"><i class="bi bi-instagram"></i></a>
-                <a class="icon-link px-3" href="#"><i class="bi bi-youtube"></i></a>
-                <a class="icon-link px-3" href="#"><i class="bi bi-discord"></i></a>
-            </div>
-            <div class="col-12">
-                <a class="link-offset-2 link-dark pe-3" href="./Front/src/paginas/terms.html">Terms</a>
-                <a class="link-offset-2 link-dark pe-3" href="./Front/src/paginas/privacy.html">Privacy</a>
-                <a class="link-offset-2 link-dark pe-3" href="./Front/src/paginas/cookies.html">Cookies</a>
-                <a class="link-offset-2 link-dark" href="./Front/src/paginas/contactUs.php">Contact us</a>
-            </div>
-        </div>
-    </footer>
+        <?php
+    include_once("./recursos/php/footer.php");
+     $footer = new Footer("./");
+    echo $footer->toHTML();
+        ?>
 </body>
 
 </html>
