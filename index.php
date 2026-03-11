@@ -75,7 +75,7 @@
             </div>
             <div class="card border-dark border-3 rounded col-xxl-3 col-xl-3 col-12 text-center">
                 <div class="card-body">
-                    <h5 class="card-title pb-2 fs-3">earn by visits</h5>
+                    <h5 class="card-title pb-2 fs-3">Earn by visits</h5>
                     <p class="card-text fs-5">Receive financial rewards based on the number of visits your game
                         receives.
                         More visits = more earnings.</p>
@@ -83,24 +83,11 @@
             </div>
         </div>
     </main>
-
-    <footer class="container-fluid">
-        <div class="row text-center align-items-center">
-            <div class="col-12 fs-3">2025&copy; vex. INDIE DEVELOPMENT PLATFORM</div>
-            <div class="col-12 pb-3">
-                <a class="icon-link px-3" href="#"><i class="bi bi-twitter-x"></i></a>
-                <a class="icon-link px-3" href="#"><i class="bi bi-instagram"></i></a>
-                <a class="icon-link px-3" href="#"><i class="bi bi-youtube"></i></a>
-                <a class="icon-link px-3" href="#"><i class="bi bi-discord"></i></a>
-            </div>
-            <div class="col-12">
-                <a class="link-offset-2 link-dark pe-3" href="./Front/src/paginas/terms.html">Terms</a>
-                <a class="link-offset-2 link-dark pe-3" href="./Front/src/paginas/privacy.html">Privacy</a>
-                <a class="link-offset-2 link-dark pe-3" href="./Front/src/paginas/cookies.html">Cookies</a>
-                <a class="link-offset-2 link-dark" href="./Front/src/paginas/contactUs.php">Contact us</a>
-            </div>
-        </div>
-    </footer>
+        <?php
+    include_once("./recursos/php/footer.php");
+     $footer = new Footer("./");
+    echo $footer->toHTML();
+        ?>
 </body>
 
 </html>

@@ -22,10 +22,10 @@ class Footer
                         <a class=\"icon-link px-3\" href=\"{$this->dots}/# \"><i class=\"bi bi-discord\"></i></a>
                     </div>
                     <div class=\"col-12\">
-                        <a class=\"link-offset-2 link-dark\" href=\"{$this->dots}/# \">Terms</a>
-                        <a class=\"link-offset-2 link-dark\" href=\"{$this->dots}/# \">Privacy</a>
-                        <a class=\"link-offset-2 link-dark\" href=\"{$this->dots}/# \">Cookies</a>
-                        <a class=\"link-offset-2 link-dark\" href=\"{$this->dots}/# \">Contact us</a>
+                        <a class=\"link-offset-2 link-dark pe-3\" href=\"{$this->dots}/Front/src/paginas/terms.html\">Terms</a>
+                        <a class=\"link-offset-2 link-dark pe-3\" href=\"{$this->dots}/Front/src/paginas/privacy.html\">Privacy</a>
+                        <a class=\"link-offset-2 link-dark pe-3\" href=\"{$this->dots}/Front/src/paginas/cookies.html\">Cookies</a>
+                        <a class=\"link-offset-2 link-dark\" href=\"{$this->dots}/Front/src/paginas/contactUs.php\">Contact us</a>
                     </div>
                 </div>
             </footer>
