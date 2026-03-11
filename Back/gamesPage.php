@@ -78,7 +78,7 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     html += `
                         <div class="col-12">
                             <div class="card h-100 rounded-4">
-                                <img src="${imgPath}" class="card-img-top rounded-top-4 p-1" alt="IMG">
+                                <img src="${imgPath}" class="card-img-top rounded-top-4 p-0" alt="IMG">
                                 <div class="card-body">
                                     <h5 class="card-title">${title}</h5>
                                     <p class="card-text">${desc}</p>
