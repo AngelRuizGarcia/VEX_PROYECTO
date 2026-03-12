@@ -14,7 +14,7 @@ class Footer
         return "
             <footer class=\"container-fluid my-5 pt-5\">
                 <div class=\"row text-center align-items-center\">
-                    <div class=\"col-12 fs-3\">2026&copy; vex. INDIE DEVELOPMENT PLATFORM</div>
+                    <div class=\"col-12 fs-3\">2026&copy; VEX. INDIE DEVELOPMENT PLATFORM</div>
                     <div class=\"col-12 pb-3\">
                         <a class=\"icon-link px-3\" href=\"{$this->dots}/# \"><i class=\"bi bi-twitter-x\"></i></a>
                         <a class=\"icon-link px-3\" href=\"{$this->dots}/# \"><i class=\"bi bi-instagram\"></i></a>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./recursos/css/index.css">
 </head>
 
-<body>
+<body class="nunitoFontFamily">
     <?php
     include_once("./recursos/php/header.php");
     $header = new Header(".");

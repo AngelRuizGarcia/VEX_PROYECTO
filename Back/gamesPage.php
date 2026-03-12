@@ -77,7 +77,7 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     <?php
     include_once("../recursos/php/footer.php");
-    $footer = new Footer("..");
+    $footer = new Footer("../");
     echo $footer->toHTML();
     ?>
 
@@ -137,7 +137,7 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     const price = game.price || 'N/A';
                     const imgPath = game.image_path ? `../recursos/${game.image_path}` : '../recursos/img/placeholder.jpg'; // Assuming a placeholder
                     html += `
-                        <div class="col-12 mt-0">
+                        <div class="col-12 mb-3 mt-0">
                             <div class="card h-100 rounded-4">
                                 <img src="${imgPath}" class="card-img-top rounded-top-4 p-0" alt="IMG">
                                 <div class="card-body">
