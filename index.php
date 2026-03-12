@@ -13,39 +13,11 @@
 </head>
 
 <body>
-    <header class="navbar">
-        <nav class="container-fluid text-center">
-            <ul class="d-flex gap-3 navbar-nav flex-row align-items-center">
-                <li class="nav-item">
-                    <a class="navbar-brand" href="#">
-                        <img src="./recursos/img/VEX_logo.png" alt="" class="img-fluid mb-3">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Browse Games</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Upload Game</a>
-                </li>
-            </ul>
-            <ul class="d-flex gap-3 text-light align-items-center navbar-nav flex-row">
-                <li class="nav-item">
-                    <a class="nav-link border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Register</a>
-                </li>
-                <li class="nav-item" hidden>
-                    <a class="nav-link border border-5 border-black rounded-pill bg-white p-2" aria-current="page" href="#">Log Out</a>
-                </li>
-                <li class="nav-item">
-                    <a class="navbar-brand" href="#">
-                        <img src="./recursos/img/sinperfil.webp" alt="" class="img-fluid rounded-circle border border-black border-3 imgSinPerf">
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php
+    include_once("./recursos/php/header.php");
+    $header = new Header(".");
+    echo $header->toHTML();
+    ?>
 
     <main class="container-fluid">
         <div class="row">
@@ -83,11 +55,11 @@
             </div>
         </div>
     </main>
-        <?php
+    <?php
     include_once("./recursos/php/footer.php");
-     $footer = new Footer("./");
+    $footer = new Footer("./");
     echo $footer->toHTML();
-        ?>
+    ?>
 </body>
 
 </html>

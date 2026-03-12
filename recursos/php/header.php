@@ -16,15 +16,15 @@ class Header
                 <nav class=\"container-fluid text-center\">
                     <ul class=\"d-flex gap-3 navbar-nav flex-row align-items-center\">
                         <li class=\"nav-item\">
-                            <a class=\"navbar-brand\" href=\"{$this->dots}/# \">
+                            <a class=\"navbar-brand\" href=\"{$this->dots}/index.php \">
                                 <img src=\"{$this->dots}/recursos/img/VEX_logo.png\" alt=\"\" class=\"img-fluid mb-3\">
                             </a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link active border border-5 border-black rounded-pill bg-white p-2\" aria-current=\"page\" href=\"{$this->dots}/# \">Browse Games</a>
+                            <a class=\"nav-link active border border-5 border-black rounded-pill bg-white p-2\" aria-current=\"page\" href=\"{$this->dots}/Back/gamesPage.php \">Browse Games</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link border border-5 border-black rounded-pill bg-white p-2\" aria-current=\"page\" href=\"{$this->dots}/# \">Upload Game</a>
+                            <a class=\"nav-link border border-5 border-black rounded-pill bg-white p-2\" aria-current=\"page\" href=\"{$this->dots}/Back/formGameRegister.php \">Upload Game</a>
                         </li>
                     </ul>
                     <!-- ELIMINAR LOS BOTONES SI ESTA INICIADA LA SESION Y PONER UN BOTON PARA CERRARLA-->
