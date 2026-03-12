@@ -24,9 +24,9 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 <article class="mt-4 pb-2 fs-5 text-center d-flex align-items-center border-bottom border-light border-2 ">
                     <label for="num_pages" class="text-white">Show:</label>
                     <select name="num_pages" id="num_pages" class="text-center rounded-pill W-25">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
+                        <option value="9">9</option>
+                        <option value="18">18</option>
+                        <option value="27">30</option>
                     </select>
                 </article>
 
@@ -62,10 +62,12 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         </select>
                     </div>
                 </article>
+
+                <br>
             </section>
 
-            <section class="col-12 col-sm-9 col-md-10 col-xl-11">
-                <article class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="content">
+            <section class="col-12 col-sm-9 col-md-10 col-xl-11 mt-0">
+                <article class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 m-0" id="content">
                     <!-- Games will be loaded here via AJAX -->
                 </article>
                 <div id="pagination-container" class="d-flex justify-content-center mt-4"></div>
@@ -81,7 +83,7 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     <script>
         let currentPage = 1;
-        let gamesPerPage = 10;
+        let gamesPerPage = 9;
 
         function loadGameGenres() {
             const genresSelect = document.getElementById('genres');
@@ -135,11 +137,11 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     const price = game.price || 'N/A';
                     const imgPath = game.image_path ? `../recursos/${game.image_path}` : '../recursos/img/placeholder.jpg'; // Assuming a placeholder
                     html += `
-                        <div class="col-12">
+                        <div class="col-12 mt-0">
                             <div class="card h-100 rounded-4">
                                 <img src="${imgPath}" class="card-img-top rounded-top-4 p-0" alt="IMG">
                                 <div class="card-body">
-                                    <h5 class="card-title">${title}</h5>
+                                    <h5 class="card-title h3">${title}</h5>
                                     <p class="card-text">${desc}</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0">
