@@ -4,8 +4,8 @@
 <head>
     <?php
     require_once("../../../recursos/php/head.php");
-    $header = new Head("VEX - Contact Us", "../../../");
-    echo $header->toHTML();
+    $head = new Head("VEX - Contact Us", "../../../");
+    echo $head->toHTML();
     ?>
 </head>
 

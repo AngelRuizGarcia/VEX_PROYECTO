@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-xxl-3 col-xl-3 col-12"></div>
             <div class="col-xxl-6 col-xl-6 col-12">
-                <div class="p-3 text-center fs-3 text-justify">vex is the platform where indie developers can earn
+                <div class="p-3 text-center fs-3 text-justify">VEX is the platform where indie developers can earn
                     rewards from visits to their games.</div>
             </div>
             <div class="col-xxl-3 col-xl-3 col-12"></div>
