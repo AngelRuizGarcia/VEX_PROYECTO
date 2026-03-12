@@ -20,19 +20,51 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     <main class="container-fluid mb-5">
         <div class="row">
-            <section class="col-12 col-sm-4 col-md-3 col-xl-2 bg-primary">
-                <article class="d-flex justify-content-center mt-4">
+            <section class="col-12 col-sm-3 col-md-2 col-xl-1 bg-primary">
+                <article class="mt-4 pb-2 fs-5 text-center d-flex align-items-center border-bottom border-light border-2 ">
                     <label for="num_pages" class="text-white">Show:</label>
-                    <select name="num_pages" id="num_pages" class="text-center rounded-pill w-25">
+                    <select name="num_pages" id="num_pages" class="text-center rounded-pill W-25">
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="30">30</option>
                     </select>
-                    <label for="num_pages" class="ms-2 text-white">games</label>
+                </article>
+
+                <article class="mt-2 pb-2 fs-5 text-center d-flex flex-column align-items-center border-bottom border-light border-2 ">
+                    
+                    <div class="d-flex flex-column align-items-start">
+                        <div class="text-white fs-3">Genres</div>
+                        <select name="genres" id="genres" class="form-control">
+                            <option value="">Select</option>
+                            <?php 
+                            $stmt = $conexion->prepare("SELECT name FROM genre");
+                            $stmt->execute();
+                            $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            foreach ($categories as $category) {
+                                echo '<option value="' . htmlspecialchars($category['name']) . '">' . htmlspecialchars($category['name']) . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+
+                    <div class="d-flex flex-column align-items-start">
+                        <div class="text-white fs-3">Tags</div>
+                        <select name="tags" id="tags" class="form-control">
+                            <option value="">Select</option>
+                            <?php 
+                            $stmt = $conexion->prepare("SELECT name FROM tag");
+                            $stmt->execute();
+                            $tags = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            foreach ($tags as $tag) {
+                                echo '<option value="' . htmlspecialchars($tag['name']) . '">' . htmlspecialchars($tag['name']) . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
                 </article>
             </section>
 
-            <section class="col-12 col-sm-8 col-md-9 col-xl-9">
+            <section class="col-12 col-sm-9 col-md-10 col-xl-11">
                 <article class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="content">
                     <!-- Games will be loaded here via AJAX -->
                 </article>
@@ -51,8 +83,35 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         let currentPage = 1;
         let gamesPerPage = 10;
 
-        function loadPage(page, numPages = gamesPerPage) {
-            fetch(`getGames.php?page=${page}&num_pages=${numPages}`).then(response => {
+        function loadGameGenres() {
+            const genresSelect = document.getElementById('genres');
+            genresSelect.addEventListener('change', function() {
+                const selectedGenre = this.value;
+                const tagsSelect = document.getElementById('tags');
+                const selectedTag = tagsSelect.value;
+                loadPage(1, gamesPerPage, selectedGenre, selectedTag);
+            });
+        }
+
+        function loadGameTags() {
+            const tagsSelect = document.getElementById('tags');
+            tagsSelect.addEventListener('change', function() {
+                const selectedTag = this.value;
+                const genresSelect = document.getElementById('genres');
+                const selectedGenre = genresSelect.value;
+                loadPage(1, gamesPerPage, selectedGenre, selectedTag);
+            });
+        }
+
+        function loadPage(page, numPages = gamesPerPage, selectedGenre = null, selectedTag = null) {
+            let url = `getGames.php?page=${page}&num_pages=${numPages}`;
+            if (selectedGenre) {
+                url += `&genre=${encodeURIComponent(selectedGenre)}`;
+            }
+            if (selectedTag) {
+                url += `&tag=${encodeURIComponent(selectedTag)}`;
+            }
+            fetch(url).then(response => {
                 if (!response.ok) throw new Error('Error en la red');
                 return response.json();
             }).then(data => {
@@ -78,7 +137,7 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     html += `
                         <div class="col-12">
                             <div class="card h-100 rounded-4">
-                                <img src="${imgPath}" class="card-img-top rounded-top-4 p-1" alt="IMG">
+                                <img src="${imgPath}" class="card-img-top rounded-top-4 p-0" alt="IMG">
                                 <div class="card-body">
                                     <h5 class="card-title">${title}</h5>
                                     <p class="card-text">${desc}</p>
@@ -128,8 +187,12 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         });
 
         window.onload = function() {
+            loadGameGenres();
+            loadGameTags();
             loadPage(1);
         };
+
+
     </script>
 </body>
 
