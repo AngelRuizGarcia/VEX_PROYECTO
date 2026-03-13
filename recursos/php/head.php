@@ -20,7 +20,7 @@ class Head{
             <title>{$this->title}</title>
             <link rel=\"stylesheet\" href=\"{$this->dots}/recursos/bootstrap/css/bootstrap.css\">
             <link rel=\"stylesheet\" href=\"{$this->dots}/recursos/bootstrap/icons/bootstrap-icons.css\">
-            <script src=\"{$this->dots}/recursos/bootstrap/js/bootstrap.js\"></script>
+            <script src=\"{$this->dots}/recursos/bootstrap/js/bootstrap.bundle.min.js\"></script>
             <link rel=\"stylesheet\" href=\"{$this->dots}/recursos/css/fontStyle.css\">
         ";
     }

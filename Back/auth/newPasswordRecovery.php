@@ -3,9 +3,9 @@
 
 <head>
     <?php
-    require_once("../recursos/php/head.php");
-    require_once("./conexionClaves.php");
-    $header = new Head("VEX - recover account", "..");
+    require_once("../../recursos/php/head.php");
+    require_once("../core/conexionClaves.php");
+    $header = new Head("VEX - recover account", "../..");
     echo $header->toHTML();
     ?>
 </head>

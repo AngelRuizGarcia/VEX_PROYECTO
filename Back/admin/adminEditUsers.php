@@ -3,9 +3,9 @@
 
 <head>
     <?php
-    require_once("./conexionClaves.php");
-    require_once("../recursos/php/head.php");
-    $header = new Head("Admin - Edit Users", "..");
+    require_once("../core/conexionClaves.php");
+    require_once("../../recursos/php/head.php");
+    $header = new Head("Admin - Edit Users", "../..");
     echo $header->toHTML();
     ?>
 </head>

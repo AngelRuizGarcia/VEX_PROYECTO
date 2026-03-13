@@ -3,8 +3,8 @@
 
 <head>
     <?php
-    require_once("../recursos/php/head.php");
-    $header = new Head("VEX - recover account", "..");
+    require_once("../../recursos/php/head.php");
+    $header = new Head("VEX - recover account", "../..");
     echo $header->toHTML();
     ?>
 </head>

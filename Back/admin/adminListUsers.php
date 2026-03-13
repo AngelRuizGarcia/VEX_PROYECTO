@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <?php
-require_once("../recursos/php/head.php");
-$header = new Head("Admin - List Users", "..");
+require_once("../../recursos/php/head.php");
+$header = new Head("Admin - List Users", "../..");
 echo $header->toHTML();
 ?>
 </head>
@@ -12,7 +12,7 @@ echo $header->toHTML();
         <h2 class="text-center">Administrador - Listar Usuarios</h2>
         
         <?php
-            require_once("./conexionClaves.php");
+            require_once("../core/conexionClaves.php");
             
             try {
                 $conexion = new PDO($dsn, $usuario, $contraseña);

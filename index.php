@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEXI</title>
-    <link rel="stylesheet" href="./recursos/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="./recursos/bootstrap/icons/bootstrap-icons.css">
-    <script src="./recursos/bootstrap/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="./recursos/css/fontStyle.css">
-    <link rel="stylesheet" href="./recursos/css/index.css">
+<?php
+include_once("./recursos/php/head.php");
+$head = new Head("VEX", ".");
+echo $head->toHTML();
+?>
+<link rel="stylesheet" href="./recursos/css/index.css">
 </head>
 
 <body class="nunitoFontFamily">
@@ -17,6 +13,17 @@
     include_once("./recursos/php/header.php");
     $header = new Header(".");
     echo $header->toHTML();
+
+    // Mostrar flash messages
+    require_once("./Back/core/sesiones.php");
+    $success = getFlashMessage('success');
+    $error = getFlashMessage('error');
+    if ($success) {
+        echo "<div class='alert alert-success text-center'>$success</div>";
+    }
+    if ($error) {
+        echo "<div class='alert alert-danger text-center'>$error</div>";
+    }
     ?>
 
     <main class="container-fluid">

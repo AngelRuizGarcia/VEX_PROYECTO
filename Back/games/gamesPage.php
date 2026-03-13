@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include_once("../recursos/php/head.php");
-$head = new Head("VEX - Games Page", "..");
+include_once("../../recursos/php/head.php");
+$head = new Head("VEX - Games Page", "../..");
 echo $head->toHTML();
 
-require_once("./conexionClaves.php");
+require_once("../core/conexionClaves.php");
 $conexion = new PDO($dsn, $usuario, $contraseña);
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
@@ -13,8 +13,8 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 <body class="nunitoFontFamily">
 
     <?php
-    include_once("../recursos/php/header.php");
-    $header = new Header("..");
+    include_once("../../recursos/php/header.php");
+    $header = new Header("../..");
     echo $header->toHTML();
     ?>
 
@@ -76,8 +76,8 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     </main>
 
     <?php
-    include_once("../recursos/php/footer.php");
-    $footer = new Footer("../");
+    include_once("../../recursos/php/footer.php");
+    $footer = new Footer("../../");
     echo $footer->toHTML();
     ?>
 
@@ -135,7 +135,7 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     const title = game.title ? game.title.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
                     const desc = game.description ? game.description.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
                     const price = game.price || 'N/A';
-                    const imgPath = game.image_path ? `../recursos/${game.image_path}` : '../recursos/img/placeholder.jpg'; // Assuming a placeholder
+                    const imgPath = game.image_path ? `../../recursos/${game.image_path}` : '../../recursos/img/placeholder.jpg'; // Assuming a placeholder
                     html += `
                         <div class="col-12 mb-3 mt-0">
                             <div class="card h-100 rounded-4">
@@ -146,7 +146,7 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                                 </div>
                                 <div class="card-footer bg-transparent border-0">
                                     <small class="text-muted">${price}</small>
-                                    <a href="#" class="btn btn-primary float-end">See More</a>
+                                    <a href="gamePage.php?id=${game.id_game}" class="btn btn-primary float-end">See More</a>
                                 </div>
                             </div>
                         </div>

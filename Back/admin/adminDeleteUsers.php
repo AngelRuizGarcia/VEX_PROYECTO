@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <?php
-require_once("../recursos/php/head.php");
-$header = new Head("Admin - Delete Users", "..");
+require_once("../../recursos/php/head.php");
+$header = new Head("Admin - Delete Users", "../..");
 echo $header->toHTML();
 ?>
 </head>
@@ -12,7 +12,7 @@ echo $header->toHTML();
         <h2 class="text-center">Administrador - Eliminar Usuarios</h2>
         
         <?php
-            require_once("./conexionClaves.php");
+            require_once("../core/conexionClaves.php");
             
             // Procesar eliminacion si se envio el formulario
             if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['borrar'])) {

@@ -1,5 +1,5 @@
 <?php
-require_once("./conexionClaves.php");
+require_once("../core/conexionClaves.php");
 $conexion = new PDO($dsn, $usuario, $contraseña);
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
